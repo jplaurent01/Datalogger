@@ -88,7 +88,6 @@ if __name__ == "__main__":
     subCMD = cmdAccess()
 
     # Oculto archivo, siempre y cuando existan
-    subCMD.hideFile("main.py")
     subCMD.hideFile("output.txt")
 
     # Levanto servidor
