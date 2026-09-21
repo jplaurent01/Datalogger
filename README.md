@@ -2,6 +2,14 @@
 
 A Python-based administration tool designed to monitor and log local keyboard inputs for auditing purposes. The application stores the recorded data locally and hosts a background file server to allow remote retrieval within the same local area network (LAN).
 
+**Important**: This tool is developed strictly for **educational purposes, academic research, and authorized security auditing**.
+
+* The author does not condone, support, or encourage the unauthorized or malicious use of this software.
+
+* Users are fully responsible for ensuring compliance with all applicable local, national, and international laws regarding privacy and unauthorized monitoring before deployment.
+
+* Use with caution and only on systems where you have explicit, written authorization.
+
 ## Features
 * **Input Logging:** Automatically records keyboard interactions and appends them to a local text file.
 * **Structured Storage:** Saves all logged content directly into an `output.txt` file inside src folder.
