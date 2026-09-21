@@ -4,7 +4,7 @@ A Python-based administration tool designed to monitor and log local keyboard in
 
 ## 🚀 Features
 * **Input Logging:** Automatically records keyboard interactions and appends them to a local text file.
-* **Structured Storage:** Saves all logged content directly into an `output.txt` file.
+* **Structured Storage:** Saves all logged content directly into an `output.txt` file inside src folder.
 * **Background File Server:** Spawns a background HTTP service to expose the generated log file.
 * **Remote Retrieval:** Allows network administrators to access the log file remotely via the machine's local IP address, provided they are on the same LAN.
 
