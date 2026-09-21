@@ -2,17 +2,17 @@
 
 A Python-based administration tool designed to monitor and log local keyboard inputs for auditing purposes. The application stores the recorded data locally and hosts a background file server to allow remote retrieval within the same local area network (LAN).
 
-## 🚀 Features
+## Features
 * **Input Logging:** Automatically records keyboard interactions and appends them to a local text file.
 * **Structured Storage:** Saves all logged content directly into an `output.txt` file inside src folder.
 * **Background File Server:** Spawns a background HTTP service to expose the generated log file.
 * **Remote Retrieval:** Allows network administrators to access the log file remotely via the machine's local IP address, provided they are on the same LAN.
 
-## 🛠️ System Architecture
+## System Architecture
 1. **Logger Module:** Runs locally to capture keystrokes and continuously append them to `output.txt`.
 2. **Server Module:** Initializes a background web server bound to the local network interface, enabling log file downloads or viewing via a web browser.
 
-## 💻 Installation & Usage
+## Installation & Usage
 
 1. Clone the repository:
    ```bash
