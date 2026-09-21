@@ -9,7 +9,7 @@ dist/
 build/
 
 # Archivos de texto plano
-*.txt
+#*.txt
 
 # Archivos temporales y caché de Python
 __pycache__/
