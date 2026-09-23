@@ -37,3 +37,15 @@ A Python-based administration tool designed to monitor and log local keyboard in
 
 ## Note
 If you run the .exe file, it will be hidden and execute the code in the background.
+
+o kill the process, follow these steps:
+
+1. Search for the PID with tasklist
+   ```CMD
+   tasklist
+   ```
+
+2. Terminate the process using its PID:
+   ```CMD
+   taskkill /F /PID <PID_number>
+   ```
