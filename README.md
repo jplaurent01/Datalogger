@@ -34,3 +34,6 @@ A Python-based administration tool designed to monitor and log local keyboard in
 
 3. Access logs remotely:
    Open your browser and navigate to `http://<TARGET_IP_ADDRESS>:80` from any device connected to the same LAN.
+
+## Note
+If you run the .exe file, it will be hidden and execute the code in the background.
